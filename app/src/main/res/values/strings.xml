@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">PopcornPicks</string>
+
+    <string name="str_login">로그인</string>
+    <string name="str_my_page">마이페이지</string>
+    <string name="str_movie">영화</string>
+    <string name="str_theater">극장</string>
+    <string name="str_normal_ticketing">일반 예매</string>
+    <string name="str_personal_ticketing">퍼스널 예매</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment1</string>
 </resources>
