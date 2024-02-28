@@ -7,6 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,9 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/main_nav_tl"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.002">
 
             <ImageView
                 android:id="@+id/main_logo_iv"
@@ -45,7 +47,7 @@
                 <TextView
                     android:id="@+id/login_tv"
                     style="@style/Main.header.tv"
-                    android:text="로그인"/>
+                    android:text="@string/str_login"/>
             </LinearLayout>
 
             <LinearLayout
@@ -61,11 +63,11 @@
                 <ImageView
                     android:id="@+id/my_page_iv"
                     style="@style/Main.header.iv"
-                    android:src="@drawable/ic_mypage"/>
+                    android:src="@drawable/ic_my_page"/>
                 <TextView
                     android:id="@+id/my_page_tv"
                     style="@style/Main.header.tv"
-                    android:text="마이페이지"/>
+                    android:text="@string/str_my_page"/>
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,45 +78,45 @@
             android:layout_height="50dp"
             android:background="@color/tab_color"
             app:layout_constraintTop_toBottomOf="@id/header_cl"
-            app:layout_constraintBottom_toTopOf="@id/temp_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" >
+            app:layout_constraintBottom_toTopOf="@id/main_tab_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/main_nav_movie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="영화"/>
+                android:text="@string/str_movie" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/main_nav_theater"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="극장"/>
+                android:text="@string/str_theater" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/main_nav_normal_ticketing"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="일반 예매"/>
+                android:text="@string/str_normal_ticketing" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/main_nav_personal_ticketing"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="퍼스널 예매"/>
+                android:text="@string/str_personal_ticketing" />
+
         </com.google.android.material.tabs.TabLayout>
 
-        <View
-            android:id="@+id/temp_view"
-            android:background="@color/no_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_tab_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/main_nav_tl"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>
