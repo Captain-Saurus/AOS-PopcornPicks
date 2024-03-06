@@ -30,57 +30,58 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        Log.d(TAG, "$TAG onCreate()")
+        Log.d(TAG, " onCreate()")
 
         initialize()
         setTabLayout()
     }
 
     private fun initialize() {
-        Log.d(TAG, "$TAG initialize()")
+        Log.d(TAG, " initialize()")
 
         // 기본 보여지는 상태는 홈화면으로
         supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, homeFragment).commit()
-
-        binding.mainLogoIv.setOnClickListener {
-            Log.d(TAG, "$TAG initialize() Logo Click set Home")
-            supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, homeFragment).commit()
-        }
     }
 
     private fun setTabLayout() {
-        Log.d(TAG, "$TAG setTabLayout()")
+        Log.d(TAG, " setTabLayout()")
 
         binding.mainNavTl.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                Log.d(TAG, "$TAG onTableSelected()")
+                Log.d(TAG, " onTableSelected()")
 
                 when (tab?.position) {
                     0 -> {
-                        Log.d(TAG, "$TAG onTableSelected() movieFragment")
+                        Log.d(TAG, " onTableSelected() movieFragment")
                         supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, movieFragment).commit()
                     }
                     1 -> {
-                        Log.d(TAG, "$TAG onTableSelected() theaterFragment")
+                        Log.d(TAG, " onTableSelected() theaterFragment")
                         supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, theaterFragment).commit()
                     }
+
                     2 -> {
-                        Log.d(TAG, "$TAG onTableSelected() normalTicketingFragment")
+                        Log.d(TAG, " onTableSelected() homeFragment")
+                        supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, homeFragment).commit()
+                    }
+
+                    3 -> {
+                        Log.d(TAG, " onTableSelected() normalTicketingFragment")
                         supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, normalTicketingFragment).commit()
                     }
-                    3 -> {
-                        Log.d(TAG, "$TAG onTableSelected() personalTicketingFragment")
+                    4 -> {
+                        Log.d(TAG, " onTableSelected() personalTicketingFragment")
                         supportFragmentManager.beginTransaction().replace(binding.mainTabView.id, personalTicketingFragment).commit()
                     }
                 }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                Log.d(TAG, "$TAG onTabReselected()")
+                Log.d(TAG, " onTabReselected()")
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                Log.d(TAG, "$TAG onTabUnselected()")
+                Log.d(TAG, " onTabUnselected()")
             }
         })
     }
