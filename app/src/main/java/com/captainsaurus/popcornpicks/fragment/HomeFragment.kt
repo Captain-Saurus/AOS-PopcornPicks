@@ -42,22 +42,22 @@ class HomeFragment : Fragment() {
         super.onResume()
         Log.d(TAG, " onResume()")
 
-        binding.homeImageViewpager.clearAnimation()
+        binding.homeImageVp.clearAnimation()
     }
 
     override fun onPause() {
         super.onPause()
         Log.d(TAG, " onResume()")
 
-        binding.homeImageViewpager.clearAnimation()
+        binding.homeImageVp.clearAnimation()
     }
 
     private fun initViewPager() {
         Log.d(TAG, " initViewPager()")
 
         homeViewPagerAdapter = HomeViewPagerAdapter(temporaryColor())
-        binding.homeImageViewpager.adapter = homeViewPagerAdapter
-        binding.homeImageViewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.homeImageVp.adapter = homeViewPagerAdapter
+        binding.homeImageVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
     }
 
     private fun temporaryColor() : ArrayList<Int> {
